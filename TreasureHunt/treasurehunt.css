@@ -1,0 +1,178 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 背景图片的容器 */
+.game-container {
+    position: relative;
+    display: inline-block;
+    background-image: url('images/background.jpg'); /* 背景图 */
+    background-size: 100% 100%; /* 背景图随容器大小缩放 */
+    width: 80vw;
+    height: calc(80vw * 1.05); /* 根据比例缩放 */
+    max-width: 713px; /* 最大宽度限制 */
+    max-height: 747px; /* 最大高度限制 */
+}
+
+/* 设置热点区域 */
+.hotspot {
+    position: absolute;
+    /* border: 2px solid red; */
+    cursor: pointer;
+}
+
+/* 抗体热点区域 */
+.antibody-hotspot {
+    top: 28%;
+    left: 20%;
+    width: 16%;
+    height: 16%;
+}
+
+/* 票据热点区域 */
+.ticket-hotspot {
+    top: 58%;
+    left: 40%;
+    width: 5%;
+    height: 5%;
+}
+
+.bottle-hotspot {
+    top: 47%;
+    left: 18%;
+    width: 5%;
+    height: 5%;
+}
+
+.machine-hotspot {
+    top: 60%;
+    left: 45%;
+    width: 8%;
+    height: 10%;
+}
+
+.notebook-hotspot {
+    top: 78%;
+    left: 72%;
+    width: 5%;
+    height: 6%;
+}
+
+.package-hotspot {
+    top: 79%;
+    left: 31%;
+    width: 6%;
+    height: 7%;
+}
+
+.pcr-hotspot {
+    top: 55%;
+    left: 70%;
+    width: 12%;
+    height: 15%;
+}
+
+/* 自适应的图标容器，确保框并列居中 */
+#icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* 水平居中对齐 */
+    width: 80vw; /* 宽度与背景图一致 */
+    max-width: 713px; /* 最大宽度与背景图最大宽度对齐 */
+    margin: 0 auto; /* 居中对齐 */
+    padding-top: 2vw;
+    /* gap: 5vw; /* 框之间的间距，使用视口宽度百分比 */
+    /* margin-top: 2vw; /* 图标容器和游戏区域之间的间距 */
+}
+
+/* 圆形框的设置 */
+.box {
+    border: 0.5vw solid #ccc;
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw; /* 宽高一致，确保圆形 */
+    max-width: 70px; /* 设置最大宽度，确保在大屏幕上适配 */
+    max-height: 70px; /* 最大高度与宽度一致 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.5s ease;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/* 图标自适应框 */
+.box img {
+    width: 80%; /* 图标大小相对于框 */
+    height: auto; /* 保持宽高比 */
+    object-fit: contain;
+    z-index: 10;
+}
+
+/* 图标移动时的样式 */
+.moving {
+    position: absolute;
+    transition: all 1.5s ease-in-out;
+    width: auto; /* 保持宽高比 */
+    /* max-width: 7%; /* 最大宽度 */
+    height: auto;
+    object-fit: contain;
+    z-index: 50; /* 确保图标显示在框之上 */
+}
+
+.box.success {
+    background-color: #E6E6FA; /* 当图标移动到目标时变色 */
+    position: relative;
+}
+
+.box.success::after {
+    content: "✔"; /* 使用 Unicode 打勾符号 */
+    font-size: 8vw; /* 调整大小 */
+    color: green; /* 打勾符号的颜色 */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-20%, -40%); /* 居中对齐 */
+    z-index: 15;
+}
+
+/* 小屏幕时调整框的大小 */
+@media (max-width: 600px) {
+    /* 小屏幕适配 */
+    #icon-container {
+        width: 100%;
+    }
+
+    .box {
+        width: 20vw;
+        height: 20vw; /* 保证圆形 */
+    }
+
+    .box img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* 按钮的基础样式 */
+.swal-custom-button {
+    background-color: #7e61f3; /* 统一的紫色背景 */
+    color: #fff; /* 白色文字 */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 悬停时按钮颜色变化 */
+.swal-custom-button:hover {
+    background-color: #b5aaef; /* 悬停时的颜色略深 */
+}

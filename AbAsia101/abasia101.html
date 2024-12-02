@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abasia Quiz Game</title>
+    <link rel="stylesheet" href="abasia101.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AbAsia 101 Quiz</h1>
+    <div class="question-box">
+        <div class="question"></div>
+        <div class="options"></div>
+    </div>
+    <div class="btn-bar">
+        <button id="previous" style="display: none;">Previous</button>
+        <button id="submit">Submit</button>
+    </div>
+    <!-- 图片与进度条 -->
+    <div class="progress-container">
+        <img id="progressImage" src="images/img-1.png" alt="Progress Image" class="progress-image">
+        <progress id="progressBar" max="11" value="1"></progress>
+    </div>
+</div>
+
+<!-- 隐藏的表单和按钮容器 -->
+<div id="form-container" style="display: none; text-align: center; margin-top: 20px;">
+    <h2>Fill Out the Form for Additional Lottery Chance</h2>
+    <iframe src="https://www.abasiabiolabs.com/test-1" width="100%" height="500px" style="border: none;"></iframe> <!-- 网址需更改（网页选择不出现在列表中） -->
+    <div style="margin-top: 20px;">
+        <button onclick="goToMainPage()" class="swal-custom-button">Back to Main Page</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="abasia101.js"></script>
+</body>
+</html>

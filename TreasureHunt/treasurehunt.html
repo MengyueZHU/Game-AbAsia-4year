@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt Game</title>
+    <link rel="stylesheet" href="treasurehunt.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<h1>Treasure Hunt Game</h1>
+<p>Find the hidden items on the image!</p>
+
+<div class="game-container">
+    <div class="hotspot antibody-hotspot" data-icon="antibody"></div>
+    <div class="hotspot ticket-hotspot" data-icon="ticket"></div>
+    <div class="hotspot bottle-hotspot" data-icon="bottle"></div>
+    <div class="hotspot machine-hotspot" data-icon="machine"></div>
+    <div class="hotspot notebook-hotspot" data-icon="notebook"></div>
+    <div class="hotspot package-hotspot" data-icon="package"></div>
+    <div class="hotspot pcr-hotspot" data-icon="pcr"></div>
+</div>
+
+<!-- 更新后的图标框，引用正确的图片文件 -->
+<div id="icon-container">
+    <div id="antibody-box" class="box">
+        <img src="images/antibody.png" alt="Antibody Icon">
+    </div>
+    <div id="ticket-box" class="box">
+        <img src="images/ticket.png" alt="Ticket Icon">
+    </div>
+    <div id="bottle-box" class="box">
+        <img src="images/bottle.png" alt="Bottle Icon">
+    </div>
+    <div id="machine-box" class="box">
+        <img src="images/machine.png" alt="Machine Icon">
+    </div>
+    <div id="notebook-box" class="box">
+        <img src="images/notebook.png" alt="Notebook Icon">
+    </div>
+    <div id="package-box" class="box">
+        <img src="images/package.png" alt="Package Icon">
+    </div>
+    <div id="pcr-box" class="box">
+        <img src="images/pcr.png" alt="PCR Icon">
+    </div>
+</div>
+
+<p id="message">Find all the hidden icons!</p>
+
+<!-- 隐藏的表单和按钮容器 -->
+<div id="form-container" style="display: none; text-align: center; margin-top: 20px;">
+    <h2>Fill Out the Form for Additional Lottery Chance</h2>
+    <iframe src="https://www.abasiabiolabs.com/test-1" width="100%" height="500px" style="border: none;"></iframe> <!-- 网址需更改（网页选择不出现在列表中） -->
+    <div style="margin-top: 20px;">
+        <button onclick="goToMainPage()" class="swal-custom-button">Back to Main Page</button>
+    </div>
+</div>
+
+<script src="treasurehunt.js"></script>
+</body>
+</html>
